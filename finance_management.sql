@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2025 at 07:02 AM
+-- Generation Time: Jun 13, 2025 at 08:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,15 +35,6 @@ CREATE TABLE `accounts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`id`, `account_name`, `opening_balance`, `created_at`, `updated_at`) VALUES
-(10, 'SBI Bank', 2500.00, '2025-05-13 04:26:30', '2025-05-13 04:26:30'),
-(11, 'Axis Bank Ltd', 500.00, '2025-05-13 04:30:17', '2025-05-13 04:30:17'),
-(12, 'CBI Bank', 15000.00, '2025-05-20 00:40:01', '2025-05-20 00:40:01');
-
 -- --------------------------------------------------------
 
 --
@@ -60,15 +51,6 @@ CREATE TABLE `expenses` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `expenses`
---
-
-INSERT INTO `expenses` (`id`, `account_id`, `title`, `date`, `amount`, `note`, `created_at`, `updated_at`) VALUES
-(4, 10, 'Light Bill', '2025-05-23', 200.00, NULL, '2025-05-13 04:27:53', '2025-05-13 04:27:53'),
-(5, 11, 'mobile recharge', '2025-05-07', 799.99, '9316453778 Mobile Reacharge', '2025-05-13 04:33:15', '2025-05-13 04:33:15'),
-(6, 12, 'Share Market Loss', '2025-01-01', 1689.89, 'GMR Infra', '2025-05-20 00:43:10', '2025-05-20 00:43:10');
 
 -- --------------------------------------------------------
 
@@ -87,16 +69,6 @@ CREATE TABLE `incomes` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `incomes`
---
-
-INSERT INTO `incomes` (`id`, `account_id`, `title`, `date`, `amount`, `note`, `created_at`, `updated_at`) VALUES
-(6, 10, 'House Rent', '2025-05-14', 500.00, 'Rent', '2025-05-13 04:27:16', '2025-05-13 04:27:16'),
-(7, 11, 'interest', '2025-05-20', 1569.56, 'Axis Bank Credit Interest', '2025-05-13 04:32:08', '2025-05-13 04:32:08'),
-(8, 12, 'Share Market', '2025-04-10', 7652.25, 'Bse limited Profit', '2025-05-20 00:41:23', '2025-05-20 00:41:23'),
-(9, 12, 'House Rent', '2025-04-19', 6000.00, 'Satelite House rent', '2025-05-21 04:45:27', '2025-05-21 04:46:19');
-
 -- --------------------------------------------------------
 
 --
@@ -111,14 +83,6 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'PATEL PRINCE', 'prince@gmail.com', '$2y$12$X/F.C6ljzTvDDOJKatfWdO5KEvfd7fzQd7au1mWrQ2bnFtnXxb38G', '2025-05-14 04:25:53', '2025-05-14 04:25:53'),
-(2, 'Prince Patel', 'princepatel15042003@gmail.com', '$2y$12$cUzm/lFdBVgs6FgcDHw5zuOCXT.9XxOPi.7lzaywv93j8KRg/G3zm', '2025-05-15 00:02:32', '2025-05-15 00:02:32');
 
 --
 -- Indexes for dumped tables
@@ -170,7 +134,7 @@ ALTER TABLE `expenses`
 -- AUTO_INCREMENT for table `incomes`
 --
 ALTER TABLE `incomes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
