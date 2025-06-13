@@ -15,7 +15,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a tabindex="-1" href="#">Profile</a>
+                                <a tabindex="-1" href="#">Change Password</a>
                             </li>
                             <li class="divider"></li>
                             <li>

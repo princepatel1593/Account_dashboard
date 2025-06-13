@@ -28,14 +28,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/dashboard/stats', [DashboardController::class, 'getStats'])->name('dashboard.stats');
     Route::post('/dashboard/monthly-chart', [DashboardController::class, 'getMonthlyChartData'])->name('dashboard.monthlyChart');
 
-//     Route::post('/debug-monthly-chart', function(\Illuminate\Http\Request $request) {
-//     \Log::info('Debug monthly-chart request', $request->all());
-//     return response()->json(['message' => 'Received', 'data' => $request->all()]);
-// });
-
-
-   
-
 
     // Account 
     Route::get('/accounts/view', [AccountController::class, 'account'])->name('accounts.view');
