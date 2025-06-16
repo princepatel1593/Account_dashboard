@@ -6,6 +6,8 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,8 +21,13 @@ Route::post('/register', [AuthController::class, 'storeregister'])->name('store.
 Route::post('/login', [AuthController::class, 'storelogin'])->name('store.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.view');
-// Route::post('/dashboard/stats', [DashboardController::class, 'getStats'])->name('dashboard.stats');
+// Forgot Password Routes 
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+//Reset Password Routes
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 Route::middleware(['auth'])->group(function () {
 

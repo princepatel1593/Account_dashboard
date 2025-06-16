@@ -43,8 +43,11 @@
                 </div>
                 <button type="submit" class="btn btn-success w-100">Login</button>
             </form>
-
+            <p class="mt-3 text-center">
+                <a href="{{route('password.request')}}">Forgot Your Password</a>
+            </p>
             <p class="mt-3 text-center">Don't have an account? <a href="{{ route('register') }}">Sign up here</a></p>
+            
         </div>
     </div>
     <script>
